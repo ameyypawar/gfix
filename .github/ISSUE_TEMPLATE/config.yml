@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Read the FAQ first
+    url: https://github.com/ameyypawar/gitfix-docs/blob/main/faq.md
+    about: Most common questions are answered here.
+  - name: Read setup.md (install troubleshooting)
+    url: https://github.com/ameyypawar/gitfix-docs/blob/main/setup.md
+    about: Install, Gatekeeper, and MCP-host wiring issues are documented here.
+  - name: Email for licensing or security questions
+    url: mailto:ameyap007aaa@gmail.com
+    about: License questions, source access requests, security disclosures.

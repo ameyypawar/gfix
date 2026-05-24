@@ -1,0 +1,54 @@
+name: Feature request
+description: A capability gfix doesn't have that you'd use if it did.
+title: "[feature] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Feature requests get read. Not every request becomes a feature — gfix has a deliberate ceiling on scope — but use-case framing always helps.
+
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Use case
+      description: What are you trying to do that gfix doesn't let you do today. Describe the workflow, not the implementation.
+      placeholder: I'm running gfix in CI against PRs from forks, and I want to fail the job if any conflict requires AI suggestion instead of a deterministic resolver.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: Proposed solution
+      description: Optional. If you have a specific design in mind, sketch it.
+    validations:
+      required: false
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Optional. What workarounds have you tried, and where do they fall short.
+    validations:
+      required: false
+
+  - type: dropdown
+    id: contribute
+    attributes:
+      label: Would you contribute this
+      description: gfix is closed-source, so contribution means specifying intent clearly enough for the maintainer to build it, not opening a PR.
+      options:
+        - Yes — happy to specify in detail
+        - No
+        - Maybe, with guidance
+    validations:
+      required: false
+
+  - type: textarea
+    id: host-context
+    attributes:
+      label: MCP host or workflow context
+      description: Optional. Which MCP host, which AI provider, what kind of repo (monorepo, microservices, etc.).
+    validations:
+      required: false

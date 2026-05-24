@@ -1,0 +1,124 @@
+name: Bug report
+description: Something broke at install, startup, or runtime.
+title: "[bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for filing a report. Filling in every required field below makes the difference between a one-day fix and a back-and-forth that takes a week. Be specific.
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: One or two paragraphs. What did you run, what did you expect, what did you get instead.
+      placeholder: I ran `gfix mcp` from Claude Code and the merge_preview tool returned an empty list even though `git status` shows three conflicted files.
+    validations:
+      required: true
+
+  - type: textarea
+    id: repro-steps
+    attributes:
+      label: Steps to reproduce
+      description: Numbered steps from a clean state. If reproduction needs a specific repo layout, describe it.
+      placeholder: |
+        1. git clone https://github.com/example/repo
+        2. cd repo && git checkout feature-branch
+        3. gfix merge main
+        4. Observe: exit code 1 with no output
+    validations:
+      required: true
+
+  - type: dropdown
+    id: os-arch
+    attributes:
+      label: OS and architecture
+      options:
+        - macOS (Apple Silicon)
+        - macOS (Intel)
+        - Linux (x86_64)
+        - Linux (arm64)
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: gfix-version
+    attributes:
+      label: gfix version
+      description: Paste the output of `gfix --version` verbatim, not a summary.
+      placeholder: gfix 0.3.1 (build abc1234)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: install-method
+    attributes:
+      label: Install method
+      options:
+        - Homebrew tap
+        - curl install script
+        - npm wrapper
+        - Manual binary download
+    validations:
+      required: true
+
+  - type: dropdown
+    id: mcp-host
+    attributes:
+      label: MCP host (if applicable)
+      description: Which client is invoking gfix as an MCP server. Leave as N/A for plain CLI use.
+      options:
+        - N/A
+        - Claude Code
+        - Cursor
+        - MCP Inspector
+        - Direct stdio
+    validations:
+      required: false
+
+  - type: dropdown
+    id: ai-provider
+    attributes:
+      label: AI provider used (if applicable)
+      description: Only relevant if the bug involves the ai-suggestion resolution kind.
+      options:
+        - N/A
+        - MCP sampling
+        - OpenAI (BYO key)
+        - Anthropic (BYO key)
+        - Gemini (BYO key)
+        - Ollama
+    validations:
+      required: false
+
+  - type: input
+    id: audit-ref
+    attributes:
+      label: Audit ref or merge_id
+      description: If you can share one, paste a `refs/gitfix/audit/<id>` ref name or the merge_id from `.gitfix/state.json`. Helps reproduce the exact merge state.
+      placeholder: refs/gitfix/audit/01HXYZ... or merge_id 01HXYZ...
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional context
+      description: Logs, screenshots, environment quirks, anything else.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: sanity-check
+    attributes:
+      label: Sanity check
+      description: Check every box before submitting.
+      options:
+        - label: I've read the FAQ at https://github.com/ameyypawar/gitfix-docs/blob/main/faq.md
+          required: true
+        - label: I've tried the troubleshooting steps in setup.md
+          required: true
+        - label: This is NOT a request for the source code (closed-source by design)
+          required: true
