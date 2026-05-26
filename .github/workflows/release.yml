@@ -29,7 +29,7 @@ jobs:
       - name: Checkout PRIVATE source repo
         uses: actions/checkout@v4
         with:
-          repository: ameyypawar/gitfix
+          repository: ameyypawar/core-merge-engine
           token: ${{ secrets.GITFIX_SOURCE_PAT }}
           path: src
 
@@ -85,5 +85,5 @@ jobs:
             --repo ameyypawar/gfix \
             --draft \
             --title "gfix ${{ github.ref_name }}" \
-            --notes "See https://github.com/ameyypawar/gitfix-docs/blob/main/changelog.md" \
+            --notes "See https://github.com/ameyypawar/gfix-docs/blob/main/changelog.md" \
             dist/*.tar.gz dist/SHA256SUMS.txt
