@@ -2,7 +2,7 @@
 
 The cross-agent, MCP-native merge resolver. Binary releases live here.
 
-> **Source code is private.** This repo distributes signed binaries and the EULA. The product is the binary. Docs live at <https://github.com/ameyypawar/gitfix-docs>.
+> **Source code is private.** This repo distributes signed binaries and the EULA. The product is the binary. Docs live at <https://github.com/ameyypawar/gfix-docs>.
 
 ## Install
 
@@ -16,7 +16,7 @@ brew install gfix
 ### Curl (macOS, Linux)
 
 ```sh
-curl -fsSL https://gitfix.pro/install | sh
+curl -fsSL https://gfix.space/install | sh
 ```
 
 ### npm wrapper (any Node-equipped machine)
@@ -39,7 +39,7 @@ Then wire into Claude Code:
 claude mcp add --scope user gfix /usr/local/bin/gfix mcp
 ```
 
-Setup guide: <https://github.com/ameyypawar/gitfix-docs/blob/main/setup.md>
+Setup guide: <https://github.com/ameyypawar/gfix-docs/blob/main/setup.md>
 
 ## What is this repo?
 
@@ -63,7 +63,7 @@ The curl installer and the Homebrew formula both verify against `SHA256SUMS.txt`
 
 File an issue here. Setup friction, install bugs, "it crashed" -- all welcome. We cannot share source code in repro discussions, so be specific about command + output + OS + version.
 
-For docs typos and content fixes, file on [gitfix-docs](https://github.com/ameyypawar/gitfix-docs/issues) instead.
+For docs typos and content fixes, file on [gfix-docs](https://github.com/ameyypawar/gfix-docs/issues) instead.
 
 ## License
 
