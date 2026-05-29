@@ -1,0 +1,8 @@
+# Staged binaries — placed here by prepare-packages.mjs in CI (never committed)
+platforms/darwin-arm64/bin/gfix
+platforms/darwin-x64/bin/gfix
+platforms/linux-x64/bin/gfix
+platforms/linux-arm64/bin/gfix
+
+# npm pack output
+*.tgz

@@ -1,0 +1,15 @@
+{
+  "name": "gfix-darwin-x64",
+  "version": "0.0.0",
+  "description": "gfix prebuilt binary for macOS x64",
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ameyypawar/gfix.git"
+  },
+  "os": ["darwin"],
+  "cpu": ["x64"],
+  "files": [
+    "bin/gfix"
+  ]
+}
