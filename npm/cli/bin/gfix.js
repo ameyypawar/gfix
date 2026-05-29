@@ -19,7 +19,7 @@ try {
 } catch {
   console.error(
     `gfix: platform package "${pkg}" is not installed.\n` +
-    `If you used --no-optional or --ignore-scripts, reinstall with: npm install -g gfix`
+    `If you used --no-optional or --ignore-scripts, reinstall with: npm install -g @gitfix/cli`
   );
   process.exit(1);
 }

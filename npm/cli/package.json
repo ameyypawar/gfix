@@ -1,5 +1,5 @@
 {
-  "name": "gfix",
+  "name": "@gitfix/cli",
   "version": "0.0.0",
   "description": "gfix - AI-powered merge conflict resolver",
   "license": "SEE LICENSE IN LICENSE.txt",
@@ -18,5 +18,8 @@
     "gfix-darwin-x64": "0.0.0",
     "gfix-linux-x64": "0.0.0",
     "gfix-linux-arm64": "0.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

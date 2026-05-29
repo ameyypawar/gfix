@@ -22,7 +22,7 @@ curl -fsSL https://gfix.space/install | sh
 ### npm wrapper (any Node-equipped machine)
 
 ```sh
-npm install -g @gitfix/cli
+npm install -g @gitfix/cli@alpha
 ```
 
 All three install paths land the same binary. Pick whichever fits your setup.
