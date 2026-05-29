@@ -1,0 +1,22 @@
+{
+  "name": "gfix",
+  "version": "0.0.0",
+  "description": "gfix - AI-powered merge conflict resolver",
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ameyypawar/gfix.git"
+  },
+  "bin": {
+    "gfix": "bin/gfix.js"
+  },
+  "files": [
+    "bin/gfix.js"
+  ],
+  "optionalDependencies": {
+    "gfix-darwin-arm64": "0.0.0",
+    "gfix-darwin-x64": "0.0.0",
+    "gfix-linux-x64": "0.0.0",
+    "gfix-linux-arm64": "0.0.0"
+  }
+}

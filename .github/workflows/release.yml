@@ -87,3 +87,44 @@ jobs:
             --title "gfix ${{ github.ref_name }}" \
             --notes "See https://github.com/ameyypawar/gfix-docs/blob/main/changelog.md" \
             dist/*.tar.gz dist/SHA256SUMS.txt
+
+  npm-publish:
+    name: publish npm packages
+    needs: build
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout gfix repo
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: dist
+          merge-multiple: true
+
+      - name: Prepare npm packages
+        run: |
+          NPM_VERSION="${{ github.ref_name }}"
+          NPM_VERSION="${NPM_VERSION#v}"
+          NPM_VERSION="$NPM_VERSION" TARBALLS_DIR="dist" node npm/scripts/prepare-packages.mjs
+
+      - name: Publish platform packages
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          npm publish npm/platforms/darwin-arm64 --tag alpha
+          npm publish npm/platforms/darwin-x64   --tag alpha
+          npm publish npm/platforms/linux-x64    --tag alpha
+          npm publish npm/platforms/linux-arm64  --tag alpha
+
+      - name: Publish main package
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          npm publish npm/cli --tag alpha

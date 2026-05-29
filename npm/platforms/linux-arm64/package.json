@@ -1,0 +1,15 @@
+{
+  "name": "gfix-linux-arm64",
+  "version": "0.0.0",
+  "description": "gfix prebuilt binary for Linux arm64",
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ameyypawar/gfix.git"
+  },
+  "os": ["linux"],
+  "cpu": ["arm64"],
+  "files": [
+    "bin/gfix"
+  ]
+}
