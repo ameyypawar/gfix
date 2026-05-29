@@ -127,4 +127,4 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
-          npm publish npm/cli --tag alpha
+          npm publish npm/cli --tag alpha --access public
